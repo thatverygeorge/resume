@@ -1,0 +1,44 @@
+body {
+  background-color: var(--white);
+  color: var(--black);
+}
+
+.link {
+  color: var(--black);
+  text-shadow: 2px 2px 0 var(--yellow);
+}
+
+.link:focus-visible,
+.link:hover {
+  text-shadow: none;
+}
+
+.heading {
+  color: var(--black);
+}
+
+.theme-switcher__label {
+  border-color: var(--black);
+}
+
+.theme-switcher__label::after {
+  border-color: var(--black);
+  background-color: var(--white);
+}
+
+.theme-switcher__checkbox:focus-visible + .theme-switcher__label,
+.theme-switcher__checkbox:hover + .theme-switcher__label {
+  background-color: var(--black);
+}
+
+.resume__save-pdf-button {
+  color: var(--black);
+  background-color: var(--white);
+  border-color: var(--black);
+}
+
+.resume__save-pdf-button:focus-visible,
+.resume__save-pdf-button:hover {
+  color: var(--white);
+  background-color: var(--black);
+}

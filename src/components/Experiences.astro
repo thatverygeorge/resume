@@ -1,0 +1,34 @@
+---
+import experiences from '@/data/experiences.json';
+import { formatDate } from '@/scripts/utils';
+---
+
+<section aria-labelledby="experience-heading">
+  <h2 id="experience-heading">Experience</h2>
+  <ul role="list">
+    {
+      experiences.map((experience) => (
+        <li>
+          <article>
+            <h3>
+              {experience.company},
+              <br />
+              {experience.position}
+            </h3>
+            <p>
+              <time datetime={experience.startDate}>{formatDate(experience.startDate)}</time>
+              <span> - </span>
+              {experience.stillWorkingHere ? (
+                <span>present</span>
+              ) : (
+                <time datetime={experience.endDate}>{formatDate(experience.endDate)}</time>
+              )}
+            </p>
+            <p>{experience.description}</p>
+            <p>Tech stack: {experience.techStack.join(', ')}.</p>
+          </article>
+        </li>
+      ))
+    }
+  </ul>
+</section>

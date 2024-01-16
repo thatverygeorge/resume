@@ -1,0 +1,32 @@
+[
+  {
+    "label": "Location:",
+    "url": "",
+    "value": "Minsk, BY (open to relocation)",
+    "ariaLabel": ""
+  },
+  {
+    "label": "Email:",
+    "url": "mailto:georgiikirakosyan@gmail.com",
+    "value": "georgiikirakosyan@gmail.com",
+    "ariaLabel": "Send me an email."
+  },
+  {
+    "label": "LinkedIn:",
+    "url": "https://www.linkedin.com/in/thatverygeorge/",
+    "value": "linkedin.com/in/thatverygeorge",
+    "ariaLabel": "Visit my LinkedIn page. Opens in a new tab."
+  },
+  {
+    "label": "GitHub:",
+    "url": "https://github.com/thatverygeorge",
+    "value": "github.com/thatverygeorge",
+    "ariaLabel": "Visit my GitHub page. Opens in a new tab."
+  },
+  {
+    "label": "Telegram:",
+    "url": "https://t.me/thatverygeorge",
+    "value": "t.me/thatverygeorge",
+    "ariaLabel": "Send me a message via Telegram. Opens in a new tab."
+  }
+]

@@ -1,0 +1,84 @@
+---
+import IconThemeLight from '@/components/icons/IconThemeLight.astro';
+import IconThemeDark from '@/components/icons/IconThemeDark.astro';
+---
+
+<div class="theme-switcher">
+  <input
+    class="theme-switcher__checkbox visually-hidden"
+    type="checkbox"
+    id="theme-switcher"
+    autocomplete="off"
+  />
+  <label class="theme-switcher__label" for="theme-switcher">
+    <span class="visually-hidden">change theme</span>
+    <IconThemeDark className="theme-switcher__icon theme-switcher__icon--dark" />
+    <IconThemeLight className="theme-switcher__icon theme-switcher__icon--light" />
+  </label>
+</div>
+
+<style is:global>
+  .theme-switcher__label {
+    display: block;
+    width: 100px;
+    height: 50px;
+    border: 2px solid var(--theme-switcher-border-color);
+    border-radius: 25px;
+    cursor: pointer;
+    position: relative;
+    background-color: var(--theme-switcher-bg-color);
+  }
+
+  .theme-switcher__icon {
+    width: 42px;
+    height: 42px;
+    border: 2px solid var(--theme-switcher-icon-border-color);
+    border-radius: 50%;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    color: var(--theme-switcher-icon-color);
+    background-color: var(--theme-switcher-icon-bg-color);
+    transition: left 300ms ease;
+  }
+
+  .theme-switcher__icon--dark {
+    visibility: hidden;
+  }
+
+  .theme-switcher__checkbox:checked + .theme-switcher__label .theme-switcher__icon {
+    left: 52px;
+  }
+
+  .theme-switcher__checkbox:checked + .theme-switcher__label .theme-switcher__icon--light {
+    visibility: hidden;
+  }
+
+  .theme-switcher__checkbox:checked + .theme-switcher__label .theme-switcher__icon--dark {
+    visibility: visible;
+  }
+
+  .theme-switcher__checkbox:focus-visible + .theme-switcher__label {
+    background-color: var(--theme-switcher-bg-color-hover);
+    border-color: var(--theme-switcher-border-color-hover);
+  }
+
+  .theme-switcher__checkbox:focus-visible + .theme-switcher__label .theme-switcher__icon {
+    color: var(--theme-switcher-icon-color-hover);
+    background-color: var(--theme-switcher-icon-bg-color-hover);
+    border-color: var(--theme-switcher-icon-border-color-hover);
+  }
+
+  @media (hover: hover) {
+    .theme-switcher__checkbox:hover + .theme-switcher__label {
+      background-color: var(--theme-switcher-bg-color-hover);
+      border-color: var(--theme-switcher-border-color-hover);
+    }
+
+    .theme-switcher__checkbox:hover + .theme-switcher__label .theme-switcher__icon {
+      color: var(--theme-switcher-icon-color-hover);
+      background-color: var(--theme-switcher-icon-bg-color-hover);
+      border-color: var(--theme-switcher-icon-border-color-hover);
+    }
+  }
+</style>

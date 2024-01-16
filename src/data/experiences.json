@@ -1,0 +1,20 @@
+[
+  {
+    "company": "SpurIT",
+    "position": "Frontend Developer",
+    "startDate": "2022-04",
+    "endDate": "2023-09",
+    "stillWorkingHere": false,
+    "description": "Developed new components from scratch and customized existing Shopify themes for e-commerce projects in a team of 5+ members.",
+    "techStack": ["HTML", "CSS", "JavaScript", "Shopify", "Liquid"]
+  },
+  {
+    "company": "iTechArt Group",
+    "position": "Frontend Developer",
+    "startDate": "2021-10",
+    "endDate": "2022-03",
+    "stillWorkingHere": false,
+    "description": "Developed new components from scratch and customized existing components for e-commerce projects in a team of 5+ members.",
+    "techStack": ["HTML", "CSS", "JavaScript", "React", "Oracle OSF"]
+  }
+]

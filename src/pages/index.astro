@@ -1,0 +1,54 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import WhoAmI from '@/components/WhoAmI.astro';
+import Helpers from '@/components/Helpers.astro';
+import About from '@/components/About.astro';
+import Contacts from '@/components/Contacts.astro';
+import Skills from '@/components/Skills.astro';
+import Languages from '@/components/Languages.astro';
+import Educations from '@/components/Educations.astro';
+import Experiences from '@/components/Experiences.astro';
+import Projects from '@/components/Projects.astro';
+
+import about from '@/data/about.json';
+---
+
+<Layout>
+  <main>
+    <div>
+      <WhoAmI name={about.name} position={about.position} techStack={about.techStack} />
+      <Helpers />
+      <About description={about.description} />
+      <Contacts />
+      <Skills />
+      <Languages />
+      <Educations />
+    </div>
+
+    <div>
+      <Experiences />
+      <Projects />
+    </div>
+  </main>
+</Layout>
+
+<style>
+  main {
+    display: grid;
+    grid-template-columns: 440px 1fr;
+    gap: 2rem;
+  }
+
+  div {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  @media (max-width: 960px) {
+    main {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

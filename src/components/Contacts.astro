@@ -1,0 +1,59 @@
+---
+import contacts from '@/data/contacts.json';
+---
+
+<section aria-labelledby="contacts-heading">
+  <h2 id="contacts-heading">Contacts</h2>
+
+  <ul role="list">
+    {
+      contacts.map((contact) => {
+        if (contact.url === '') {
+          return (
+            <li>
+              <span>{contact.label}</span>
+              <span>{contact.value}</span>
+            </li>
+          );
+        }
+
+        return (
+          <li>
+            <span aria-hidden="true">{contact.label}</span>
+            <a href={contact.url} target="_blank" rel="noopener noreferrer">
+              <span aria-hidden="true">{contact.value}</span>
+              <span class="visually-hidden">{contact.ariaLabel}</span>
+            </a>
+          </li>
+        );
+      })
+    }
+  </ul>
+</section>
+
+<style>
+  li {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    position: relative;
+  }
+
+  li:before {
+    content: '•';
+    position: absolute;
+    left: -1.5rem;
+    top: 0;
+  }
+
+  @media (max-width: 480px) {
+    li {
+      flex-direction: column;
+    }
+
+    li > span:nth-of-type(2),
+    li > a {
+      padding-left: 1rem;
+    }
+  }
+</style>

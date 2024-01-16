@@ -1,0 +1,40 @@
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: var(--black);
+
+    --h1-text-color: var(--yellow);
+    --h2-text-color: var(--yellow);
+    --h2-border-color: var(--yellow);
+    --h3-text-color: var(--yellow);
+
+    --text-color: var(--white);
+
+    --link-text-color: var(--yellow);
+    --link-outline-color: var(--white);
+    --link-shadow-color: transparent;
+
+    --link-text-color-hover: var(--white);
+
+    --button-text-color: var(--yellow);
+    --button-bg-color: var(--black);
+    --button-border-color: var(--yellow);
+
+    --button-text-color-hover: var(--black);
+    --button-bg-color-hover: var(--yellow);
+    --button-border-color-hover: var(--yellow);
+
+    --theme-switcher-bg-color: var(--black);
+    --theme-switcher-border-color: var(--yellow);
+    --theme-switcher-icon-color: var(--yellow);
+    --theme-switcher-icon-bg-color: var(--black);
+    --theme-switcher-icon-border-color: var(--yellow);
+
+    --theme-switcher-bg-color-hover: var(--yellow);
+    --theme-switcher-border-color-hover: var(--yellow);
+    --theme-switcher-icon-color-hover: var(--yellow);
+    --theme-switcher-icon-bg-color-hover: var(--black);
+    --theme-switcher-icon-border-color-hover: var(--yellow);
+
+    --dates-color: var(--gray);
+  }
+}

@@ -1,0 +1,25 @@
+---
+import skills from '@/data/skills.json';
+---
+
+<section aria-labelledby="skills-heading">
+  <h2 id="skills-heading">Skills</h2>
+  <ul role="list">
+    {skills.map((skill) => <li>{skill}</li>)}
+  </ul>
+</section>
+
+<style>
+  ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 2rem;
+    align-content: start;
+  }
+
+  @media (max-width: 480px) {
+    ul {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+</style>

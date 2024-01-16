@@ -1,0 +1,32 @@
+---
+import educations from '@/data/educations.json';
+import { formatDate } from '@/scripts/utils';
+---
+
+<section aria-labelledby="education-heading">
+  <h2 id="education-heading">Education</h2>
+  <ul role="list">
+    {
+      educations.map((education) => (
+        <li>
+          <article>
+            <h3>
+              {education.academy},
+              <br />
+              {education.course}
+            </h3>
+            <p>
+              <time datetime={education.startDate}>{formatDate(education.startDate)}</time>
+              <span> - </span>
+              {education.stillStudyingHere ? (
+                <span>present</span>
+              ) : (
+                <time datetime={education.endDate}>{formatDate(education.endDate)}</time>
+              )}
+            </p>
+          </article>
+        </li>
+      ))
+    }
+  </ul>
+</section>

@@ -1,0 +1,35 @@
+---
+import projects from '@/data/projects.json';
+---
+
+<section aria-labelledby="projects-heading">
+  <h2 id="projects-heading">Projects</h2>
+  <ul role="list">
+    {
+      projects.map((project) => (
+        <li>
+          <article>
+            <h3>{project.name}</h3>
+            <p>{project.description}</p>
+            <p>Tech stack: {project.techStack.join(', ')}.</p>
+            <div>
+              <a href={project.demoLink} target="_blank" rel="noopener noreferrer">
+                <span aria-hidden="true">Demo</span>
+                <span class="visually-hidden">
+                  Demo of the {project.name} project. Opens in a new tab.
+                </span>
+              </a>
+              <span> | </span>
+              <a href={project.sourceCodeLink} target="_blank" rel="noopener noreferrer">
+                <span aria-hidden="true">GitHub</span>
+                <span class="visually-hidden">
+                  Source code of the {project.name} project. Opens in a new tab.
+                </span>
+              </a>
+            </div>
+          </article>
+        </li>
+      ))
+    }
+  </ul>
+</section>

@@ -4,7 +4,12 @@ import about from '@/data/about.json';
 const fileName = `${about.name} — ${about.position} (${about.techStack.join(', ')})`;
 ---
 
-<a class="button" href="/resume/pdf/resume.pdf" download={fileName} target="_blank">
+<a
+  class="button"
+  href=`${import.meta.env.BASE_URL}/pdf/resume.pdf`
+  download={fileName}
+  target="_blank"
+>
   <span aria-hidden="true">save pdf</span>
   <span class="visually-hidden">save this resume as pdf</span>
 </a>

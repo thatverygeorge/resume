@@ -8,17 +8,18 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "lint": "eslint --ext .js,.astro src",
+    "lint": "eslint --ext .js,.ts,.astro src",
     "format": "prettier --write src/**/*"
   },
   "dependencies": {
-    "astro": "^3.0.10"
+    "astro": "^4.2.1"
   },
   "devDependencies": {
-    "eslint": "^8.48.0",
-    "eslint-plugin-astro": "^0.29.0",
-    "eslint-plugin-jsx-a11y": "^6.7.1",
-    "prettier": "^3.0.3",
-    "prettier-plugin-astro": "^0.12.0"
+    "@typescript-eslint/eslint-plugin": "^6.19.1",
+    "@typescript-eslint/parser": "^6.19.0",
+    "eslint": "^8.56.0",
+    "eslint-plugin-astro": "^0.31.3",
+    "prettier": "^3.2.4",
+    "prettier-plugin-astro": "^0.13.0"
   }
 }

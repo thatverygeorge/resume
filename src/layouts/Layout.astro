@@ -14,45 +14,41 @@ import about from '@/data/about.json';
     <link rel="icon" type="image/ico" href="/resume/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content={Astro.generator} />
-    <title>George Kirakosyan — Frontend Developer (React | Vue)</title>
+    <title>{`${about.name} — ${about.position} (${about.techStack.join(', ')})`}</title>
   </head>
 
   <body>
     <slot />
-
-    <script is:inline>
-      Classes = {
-        THEME: {
-          LIGHT: 'theme-light',
-          DARK: 'theme-dark',
-        },
-      };
-
-      const Themes = {
-        LIGHT: 'light',
-        DARK: 'dark',
-      };
-
-      const theme = localStorage.getItem('theme') ?? '';
-      const root = document.querySelector(':root');
-      const checkbox = document.querySelector('.theme-switcher__checkbox');
-
-      switch (theme) {
-        case Themes.LIGHT:
-          root.classList.add(Classes.THEME.LIGHT);
-          break;
-        case Themes.DARK:
-          root.classList.add(Classes.THEME.DARK);
-          checkbox.checked = true;
-          break;
-        default:
-          checkbox.checked = window.matchMedia('(prefers-color-scheme: dark)').matches;
-          break;
-      }
-    </script>
   </body>
 </html>
 
-<script>
-  import '../scripts/themeSwitcher.ts';
+<script is:inline>
+  const Classes = {
+    THEME: {
+      LIGHT: 'theme-light',
+      DARK: 'theme-dark',
+    },
+  };
+
+  const Themes = {
+    LIGHT: 'light',
+    DARK: 'dark',
+  };
+
+  const theme = localStorage.getItem('theme') ?? '';
+  const root = document.querySelector(':root');
+  const checkbox = document.querySelector('.theme-switcher__checkbox');
+
+  switch (theme) {
+    case Themes.LIGHT:
+      root.classList.add(Classes.THEME.LIGHT);
+      break;
+    case Themes.DARK:
+      root.classList.add(Classes.THEME.DARK);
+      checkbox.checked = true;
+      break;
+    default:
+      checkbox.checked = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      break;
+  }
 </script>

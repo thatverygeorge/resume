@@ -1,27 +1,27 @@
 ---
-import educations from '@/data/educations.json';
+import education from '@/data/education.json';
 import { formatDate } from '@/scripts/utils';
 ---
 
 <section aria-labelledby="education-heading">
   <h2 id="education-heading">Education</h2>
-  <ul role="list">
+  <ul>
     {
-      educations.map((education) => (
+      education.map((el) => (
         <li>
           <article>
             <h3>
-              {education.academy},
+              {el.academy},
               <br />
-              {education.course}
+              {el.course}
             </h3>
             <p>
-              <time datetime={education.startDate}>{formatDate(education.startDate)}</time>
+              <time datetime={el.startDate}>{formatDate(el.startDate)}</time>
               <span> - </span>
-              {education.stillStudyingHere ? (
+              {el.stillStudyingHere ? (
                 <span>present</span>
               ) : (
-                <time datetime={education.endDate}>{formatDate(education.endDate)}</time>
+                <time datetime={el.endDate}>{formatDate(el.endDate)}</time>
               )}
             </p>
           </article>

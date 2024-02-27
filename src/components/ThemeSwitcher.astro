@@ -17,7 +17,65 @@ import IconThemeDark from '@/components/icons/IconThemeDark.astro';
   </label>
 </div>
 
-<script src="../scripts/themeSwitcher.ts"></script>
+<script is:inline>
+  class ThemeSwitcher {
+    Themes = {
+      AUTO: 'auto',
+      LIGHT: 'light',
+      DARK: 'dark',
+    };
+
+    constructor(checkbox) {
+      this.checkbox = checkbox;
+
+      this.darkThemeQuery = window.matchMedia('(prefers-color-scheme: dark)');
+      this.theme = localStorage.getItem('theme') ?? this.Themes.AUTO;
+
+      this.handleManualChange = this.handleManualChange.bind(this);
+      this.handleAutoChange = this.handleAutoChange.bind(this);
+    }
+
+    init() {
+      switch (this.theme) {
+        case this.Themes.LIGHT:
+          this.checkbox.checked = false;
+          break;
+        case this.Themes.DARK:
+          this.checkbox.checked = true;
+          break;
+        case this.Themes.AUTO:
+          this.checkbox.checked = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          this.darkThemeQuery.addEventListener('change', this.handleAutoChange);
+          break;
+      }
+
+      this.checkbox.addEventListener('change', this.handleManualChange);
+    }
+
+    destroy() {
+      this.checkbox.removeEventListener('change', this.handleManualChange);
+      this.darkThemeQuery.removeEventListener('change', this.handleAutoChange);
+    }
+
+    handleAutoChange(evt) {
+      this.checkbox.checked = evt.matches ? true : false;
+    }
+
+    handleManualChange() {
+      this.darkThemeQuery.removeEventListener('change', this.handleAutoChange);
+      this.checkbox.checked ? this.setTheme(this.Themes.DARK) : this.setTheme(this.Themes.LIGHT);
+      localStorage.setItem('theme', this.theme);
+    }
+
+    setTheme(value) {
+      this.theme = value;
+    }
+  }
+
+  const themeCheckbox = document.querySelector('.theme-switcher__checkbox');
+  const themeSwitcher = new ThemeSwitcher(themeCheckbox);
+  themeSwitcher.init();
+</script>
 
 <style is:global>
   .theme-switcher__label {

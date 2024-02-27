@@ -1,4 +1,6 @@
 :root {
+  color-scheme: light;
+
   --white: #fff;
   --black: #101820;
   --gray: #96b1ad;
@@ -6,9 +8,7 @@
   --yellow: #fee715;
   --red: #be5944;
   --green: #0cb877;
-}
 
-:root.theme-light {
   --background-color: var(--white);
 
   --h1-text-color: var(--black);
@@ -47,7 +47,9 @@
   --dates-color: var(--gray);
 }
 
-:root.theme-dark {
+:root:has(#theme-switcher:checked) {
+  color-scheme: dark;
+
   --background-color: var(--black);
 
   --h1-text-color: var(--yellow);

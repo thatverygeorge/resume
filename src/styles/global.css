@@ -2,12 +2,11 @@
   color-scheme: light;
 
   --white: #fff;
-  --black: #101820;
-  --gray: #96b1ad;
-
-  --yellow: #fee715;
-  --red: #be5944;
-  --green: #0cb877;
+  --black: #282828;
+  --gray: #747474;
+  --yellow: #f5b82e;
+  --red: #ec0000;
+  --green: #4fb477;
 
   --background-color: var(--white);
 
@@ -19,10 +18,8 @@
   --text-color: var(--black);
 
   --link-text-color: var(--black);
-  --link-outline-color: var(--black);
-  --link-shadow-color: var(--yellow);
-
-  --link-text-color-hover: var(--black);
+  --link-underline-color: var(--black);
+  --link-accent-color: var(--yellow);
 
   --button-text-color: var(--black);
   --button-bg-color: var(--white);
@@ -44,7 +41,7 @@
   --theme-switcher-icon-bg-color-hover: var(--white);
   --theme-switcher-icon-border-color-hover: var(--black);
 
-  --dates-color: var(--gray);
+  --dates-color: var(--black);
 }
 
 :root:has(#theme-switcher:checked) {
@@ -59,11 +56,9 @@
 
   --text-color: var(--white);
 
-  --link-text-color: var(--yellow);
-  --link-outline-color: var(--white);
-  --link-shadow-color: transparent;
-
-  --link-text-color-hover: var(--white);
+  --link-text-color: var(--white);
+  --link-underline-color: var(--white);
+  --link-accent-color: var(--yellow);
 
   --button-text-color: var(--yellow);
   --button-bg-color: var(--black);
@@ -85,7 +80,7 @@
   --theme-switcher-icon-bg-color-hover: var(--black);
   --theme-switcher-icon-border-color-hover: var(--yellow);
 
-  --dates-color: var(--gray);
+  --dates-color: var(--white);
 }
 
 *,
@@ -103,6 +98,7 @@ html {
   font-stretch: 85%;
   color: var(--text-color);
   background-color: var(--background-color);
+  word-break: break-word;
 }
 
 body {
@@ -169,21 +165,29 @@ p {
 
 p:has(time) {
   color: var(--dates-color);
+  opacity: 0.7;
 }
 
 a {
-  display: inline-block;
-  color: var(--link-text-color);
-  text-shadow: 2px 2px 0 var(--link-shadow-color);
+  padding-bottom: 2px;
   text-decoration: none;
-  border-radius: 4px;
+  outline: none;
+  color: var(--link-text-color);
+  background-image: linear-gradient(
+    90deg,
+    var(--link-accent-color),
+    var(--link-accent-color) 50%,
+    var(--link-underline-color) 50%,
+    var(--link-underline-color)
+  );
+  background-position: 100% 100%;
+  background-repeat: no-repeat;
+  background-size: 200% 2px;
+  transition: background-position 0.25s linear;
 }
 
 a:focus-visible {
-  color: var(--link-text-color-hover);
-  text-shadow: none;
-  outline: 2px solid var(--link-outline-color);
-  outline-offset: 4px;
+  background-position: 0 100%;
 }
 
 button,
@@ -193,6 +197,7 @@ a:is(.button) {
   padding: 0.5rem;
   border: 2px solid var(--button-border-color);
   border-radius: 25px;
+  background: none;
   background-color: var(--button-bg-color);
   color: var(--button-text-color);
   font-size: 1.25rem;
@@ -203,6 +208,7 @@ a:is(.button) {
   display: flex;
   justify-content: center;
   align-items: center;
+  outline: none;
   word-break: break-all;
 }
 
@@ -211,7 +217,6 @@ a:is(.button):focus-visible {
   border: 2px solid var(--button-border-color-hover);
   background-color: var(--button-bg-color-hover);
   color: var(--button-text-color-hover);
-  outline: none;
 }
 
 .visually-hidden {
@@ -229,9 +234,7 @@ a:is(.button):focus-visible {
 
 @media (hover: hover) {
   a:hover {
-    color: var(--link-text-color-hover);
-    text-shadow: none;
-    text-decoration: underline;
+    background-position: 0 100%;
   }
 
   button:hover,
@@ -240,11 +243,5 @@ a:is(.button):focus-visible {
     background-color: var(--button-bg-color-hover);
     color: var(--button-text-color-hover);
     text-decoration: none;
-  }
-}
-
-@media print {
-  html {
-    font-size: 11px;
   }
 }

@@ -3,12 +3,12 @@
   "CSS",
   "JavaScript",
   "TypeScript",
-  "React",
-  "Redux",
   "Vue",
   "Pinia",
-  "Shopify",
-  "Git",
+  "React",
+  "Vue Router",
   "Vite",
-  "Jest"
+  "Playwright",
+  "Jest",
+  "Vitest"
 ]

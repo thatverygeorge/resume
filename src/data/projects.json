@@ -1,22 +1,6 @@
 [
   {
-    "name": "Weather App",
-    "description": "Web app to monitor weather where you can add, delete and rearrange locations.",
-    "techStack": [
-      "HTML",
-      "CSS",
-      "JavaScript",
-      "TypeScript",
-      "Vue",
-      "Vue Router",
-      "Pinia",
-      "Vite"
-    ],
-    "demoLink": "https://thatverygeorge.github.io/weather-app/#/",
-    "sourceCodeLink": "https://github.com/thatverygeorge/weather-app"
-  },
-  {
-    "name": "Resume Builder ",
+    "name": "Resume Builder",
     "description": "Web app to build your perfect CV.",
     "techStack": [
       "HTML",
@@ -29,6 +13,22 @@
     ],
     "demoLink": "https://thatverygeorge.github.io/resume-builder/#/",
     "sourceCodeLink": "https://github.com/thatverygeorge/resume-builder"
+  },
+  {
+    "name": "Weather App",
+    "description": "Web app to monitor weather where you can add, delete, and rearrange locations.",
+    "techStack": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "TypeScript",
+      "Vue",
+      "Vue Router",
+      "Pinia",
+      "Vite"
+    ],
+    "demoLink": "https://thatverygeorge.github.io/weather-app/#/",
+    "sourceCodeLink": "https://github.com/thatverygeorge/weather-app"
   },
   {
     "name": "Just Do It!",

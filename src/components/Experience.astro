@@ -24,7 +24,7 @@ import { formatDate } from '@/scripts/utils';
                 <time datetime={el.endDate}>{formatDate(el.endDate)}</time>
               )}
             </p>
-            <p>{el.description}</p>
+            {el.description && <p>{el.description}</p>}
             <p>Tech stack: {el.techStack.join(', ')}.</p>
           </article>
         </li>

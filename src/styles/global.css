@@ -108,7 +108,7 @@ body {
   padding: 4rem 2rem;
 }
 
-@media (max-width: 960px) {
+@media (width <= 960px) {
   body {
     padding: 4rem 1rem;
   }

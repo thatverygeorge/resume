@@ -7,21 +7,21 @@ import { formatDate } from '@/scripts/utils';
   <h2 id="education-heading">Education</h2>
   <ul>
     {
-      education.map((el) => (
+      education.map(({ academy, course, startDate, endDate }) => (
         <li>
           <article>
             <h3>
-              {el.academy},
+              {academy},
               <br />
-              {el.course}
+              {course}
             </h3>
             <p>
-              <time datetime={el.startDate}>{formatDate(el.startDate)}</time>
+              <time datetime={startDate}>{formatDate(startDate)}</time>
               <span> - </span>
-              {el.stillStudyingHere ? (
-                <span>present</span>
+              {endDate ? (
+                <time datetime={endDate}>{formatDate(endDate)}</time>
               ) : (
-                <time datetime={el.endDate}>{formatDate(el.endDate)}</time>
+                <span>present</span>
               )}
             </p>
           </article>

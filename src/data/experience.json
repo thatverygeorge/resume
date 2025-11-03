@@ -4,16 +4,14 @@
     "position": "Frontend Developer",
     "startDate": "2024-06",
     "endDate": "",
-    "stillWorkingHere": true,
     "description": "Developing responsive components from scratch in a team of 10+ members.",
-    "techStack": ["HTML", "CSS (SCSS)", "JavaScript", "TypeScript", "Vue", "Vue Router", "Pinia", "Jest"]
+    "techStack": ["HTML", "CSS (SCSS)", "JavaScript", "TypeScript", "Vue", "Vue Router", "Nuxt", "Pinia", "Jest"]
   },
   {
     "company": "SpurIT",
     "position": "Frontend Developer",
-    "startDate": "2022-04",
+    "startDate": "2022-09",
     "endDate": "2023-09",
-    "stillWorkingHere": false,
     "description": "",
     "techStack": ["HTML", "CSS", "JavaScript", "Shopify", "Liquid"]
   },
@@ -22,7 +20,6 @@
     "position": "Frontend Developer",
     "startDate": "2021-10",
     "endDate": "2022-03",
-    "stillWorkingHere": false,
     "description": "",
     "techStack": ["HTML", "CSS", "JavaScript", "React", "Oracle OSF"]
   }

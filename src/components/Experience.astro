@@ -7,25 +7,25 @@ import { formatDate } from '@/scripts/utils';
   <h2 id="experience-heading">Experience</h2>
   <ul>
     {
-      experience.map((el) => (
+      experience.map(({ company, position, startDate, endDate, description, techStack }) => (
         <li>
           <article>
             <h3>
-              {el.company},
+              {company},
               <br />
-              {el.position}
+              {position}
             </h3>
             <p>
-              <time datetime={el.startDate}>{formatDate(el.startDate)}</time>
+              <time datetime={startDate}>{formatDate(startDate)}</time>
               <span> - </span>
-              {el.stillWorkingHere ? (
-                <span>present</span>
+              {endDate ? (
+                <time datetime={endDate}>{formatDate(endDate)}</time>
               ) : (
-                <time datetime={el.endDate}>{formatDate(el.endDate)}</time>
+                <span>present</span>
               )}
             </p>
-            {el.description && <p>{el.description}</p>}
-            <p>Tech stack: {el.techStack.join(', ')}.</p>
+            {description && <p>{description}</p>}
+            <p>Tech stack: {techStack.join(', ')}.</p>
           </article>
         </li>
       ))

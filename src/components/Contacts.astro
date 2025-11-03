@@ -7,22 +7,22 @@ import contacts from '@/data/contacts.json';
 
   <ul>
     {
-      contacts.map((contact) => {
-        if (contact.url === '') {
+      contacts.map(({ url, label, value, ariaLabel }) => {
+        if (url === '') {
           return (
             <li>
-              <span>{contact.label}</span>
-              <span>{contact.value}</span>
+              <span>{label}</span>
+              <span>{value}</span>
             </li>
           );
         }
 
         return (
           <li>
-            <span aria-hidden="true">{contact.label}</span>
-            <a href={contact.url} target="_blank" rel="noopener noreferrer">
-              <span aria-hidden="true">{contact.value}</span>
-              <span class="visually-hidden">{contact.ariaLabel}</span>
+            <span aria-hidden="true">{label}</span>
+            <a href={url} target="_blank" rel="noopener noreferrer">
+              <span aria-hidden="true">{value}</span>
+              <span class="visually-hidden">{ariaLabel}</span>
             </a>
           </li>
         );

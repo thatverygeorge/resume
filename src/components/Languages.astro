@@ -5,6 +5,6 @@ import languages from '@/data/languages.json';
 <section aria-labelledby="languages-heading">
   <h2 id="languages-heading">Languages</h2>
   <ul>
-    {languages.map((language) => <li>{`${language.label}: ${language.value}`}</li>)}
+    {languages.map(({ label, value }) => <li>{`${label}: ${value}`}</li>)}
   </ul>
 </section>

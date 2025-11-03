@@ -5,7 +5,7 @@ interface Props {
   techStack: string[];
 }
 
-const { name, position, techStack } = Astro.props;
+const { name, position } = Astro.props;
 ---
 
 <section aria-labelledby="resume-heading">
@@ -13,7 +13,5 @@ const { name, position, techStack } = Astro.props;
     {name}
     <br />
     {position}
-    <br />
-    [{techStack.join(' | ')}]
   </h1>
 </section>

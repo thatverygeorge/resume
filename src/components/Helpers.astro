@@ -1,6 +1,6 @@
 ---
-import ThemeSwitcher from '@/components/ThemeSwitcher.astro';
 import ButtonSavePdf from '@/components/ButtonSavePdf.astro';
+import ThemeSwitcher from '@/components/ThemeSwitcher.astro';
 ---
 
 <section>
@@ -12,13 +12,16 @@ import ButtonSavePdf from '@/components/ButtonSavePdf.astro';
   section {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: flex-end;
+    align-items: center;
     flex-wrap: wrap;
     gap: 2rem;
-  }
 
-  @media print {
-    section {
+    @media (width <= 960px) {
+      justify-content: center;
+    }
+
+    @media print {
       display: none;
     }
   }

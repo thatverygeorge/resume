@@ -1,6 +1,6 @@
 ---
 interface Props {
-  description: string;
+  description: Array<string>;
 }
 
 const { description } = Astro.props;
@@ -8,5 +8,8 @@ const { description } = Astro.props;
 
 <section aria-labelledby="about-heading">
   <h2 id="about-heading">About</h2>
-  <p>{description}</p>
+
+  {description.map((item) => (
+    <p>{item}</p>
+  ))}
 </section>

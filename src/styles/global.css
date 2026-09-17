@@ -87,12 +87,13 @@
 *::before,
 *::after {
   box-sizing: inherit;
+  -webkit-tap-highlight-color: transparent;
 }
 
 html {
   box-sizing: border-box;
   height: 100%;
-  font-family: MartianMono, monospace;
+  font-family: var(--font-iosevka);
   font-size: 10px;
   font-weight: 400;
   font-stretch: 85%;
@@ -106,10 +107,8 @@ body {
   max-width: 1040px;
   margin: 0 auto;
   padding: 4rem 2rem;
-}
 
-@media (width <= 960px) {
-  body {
+  @media (width <= 960px) {
     padding: 4rem 1rem;
   }
 }
@@ -142,8 +141,11 @@ h3 {
 
 h1 {
   font-size: 2.25rem;
-  text-align: center;
   color: var(--h1-text-color);
+
+  @media (width <= 960px) {
+    text-align: center;
+  }
 }
 
 h2 {
@@ -163,7 +165,7 @@ p {
   font-size: 1.5rem;
 }
 
-p:has(time) {
+p.dates {
   color: var(--dates-color);
   opacity: 0.7;
 }
@@ -184,6 +186,12 @@ a {
   background-repeat: no-repeat;
   background-size: 200% 2px;
   transition: background-position 0.25s linear;
+
+  @media (hover: hover) {
+    &:hover {
+      background-position: 0 100%;
+    }
+  }
 }
 
 a:focus-visible {
@@ -210,6 +218,15 @@ a:is(.button) {
   align-items: center;
   outline: none;
   word-break: break-all;
+
+  @media (hover: hover) {
+    &:hover {
+      border: 2px solid var(--button-border-color-hover);
+      background-color: var(--button-bg-color-hover);
+      color: var(--button-text-color-hover);
+      text-decoration: none;
+    }
+  }
 }
 
 button:focus-visible,
@@ -230,18 +247,4 @@ a:is(.button):focus-visible {
   clip-path: inset(100%);
   clip: rect(0 0 0 0);
   overflow: hidden;
-}
-
-@media (hover: hover) {
-  a:hover {
-    background-position: 0 100%;
-  }
-
-  button:hover,
-  a:is(.button):hover {
-    border: 2px solid var(--button-border-color-hover);
-    background-color: var(--button-bg-color-hover);
-    color: var(--button-text-color-hover);
-    text-decoration: none;
-  }
 }

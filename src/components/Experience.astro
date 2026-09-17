@@ -1,34 +1,39 @@
 ---
 import experience from '@/data/experience.json';
-import { formatDate } from '@/scripts/utils';
+import { formatDate, formatDateForAriaLabel } from '@/scripts/utils';
 ---
 
 <section aria-labelledby="experience-heading">
   <h2 id="experience-heading">Experience</h2>
   <ul>
-    {
-      experience.map(({ company, position, startDate, endDate, description, techStack }) => (
-        <li>
-          <article>
-            <h3>
-              {company},
-              <br />
-              {position}
-            </h3>
-            <p>
-              <time datetime={startDate}>{formatDate(startDate)}</time>
-              <span> - </span>
-              {endDate ? (
-                <time datetime={endDate}>{formatDate(endDate)}</time>
-              ) : (
-                <span>present</span>
-              )}
-            </p>
-            {description && <p>{description}</p>}
-            <p>Tech stack: {techStack.join(', ')}.</p>
-          </article>
-        </li>
-      ))
-    }
+    {experience.map(({ company, position, startDate, endDate, description, techStack }) => (
+      <li>
+        <article>
+          <h3>
+            {company},
+            <br />
+            {position}
+          </h3>
+          <p class="dates">
+            <span class="visually-hidden">{formatDateForAriaLabel(startDate, endDate)}</span>
+            <span aria-hidden="true">{formatDate(startDate, endDate).toLowerCase()}</span>
+          </p>
+          {description.length > 0 && (
+            <ul class="description-list">
+              {description.map((item) => (
+                <li>{item}</li>
+              ))}
+            </ul>
+          )}
+          <p>Tech stack: {techStack.join(', ')}.</p>
+        </article>
+      </li>
+    ))}
   </ul>
 </section>
+
+<style>
+  .description-list li::marker {
+    content: '- ';
+  }
+</style>

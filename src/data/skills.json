@@ -4,11 +4,11 @@
   "JavaScript",
   "TypeScript",
   "Vue",
+  "Nuxt",
   "Pinia",
-  "React",
   "Vue Router",
   "Vite",
+  "Vitest",
   "Playwright",
-  "Jest",
-  "Vitest"
+  "React"
 ]

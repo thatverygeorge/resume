@@ -5,30 +5,28 @@ import projects from '@/data/projects.json';
 <section aria-labelledby="projects-heading">
   <h2 id="projects-heading">Projects</h2>
   <ul>
-    {
-      projects.map(({ name, description, techStack, demoLink, sourceCodeLink }) => (
-        <li>
-          <article>
-            <h3>{name}</h3>
-            <p>{description}</p>
-            <p>Tech stack: {techStack.join(', ')}.</p>
-            <div>
-              <a href={demoLink} target="_blank" rel="noopener noreferrer">
-                <span aria-hidden="true">Demo</span>
-                <span class="visually-hidden">Demo of the {name} project. Opens in a new tab.</span>
-              </a>
-              <span> | </span>
-              <a href={sourceCodeLink} target="_blank" rel="noopener noreferrer">
-                <span aria-hidden="true">Source Code</span>
-                <span class="visually-hidden">
-                  Source code of the {name} project. Opens in a new tab.
-                </span>
-              </a>
-            </div>
-          </article>
-        </li>
-      ))
-    }
+    {projects.map(({ name, description, techStack, demoLink, sourceCodeLink }) => (
+      <li>
+        <article>
+          <h3>{name}</h3>
+          <p>{description}</p>
+          <p>Tech stack: {techStack.join(', ')}.</p>
+          <div>
+            <a href={demoLink} target="_blank" rel="noopener noreferrer">
+              <span aria-hidden="true">Demo</span>
+              <span class="visually-hidden">Demo of the {name} project. Opens in a new tab.</span>
+            </a>
+            <span> | </span>
+            <a href={sourceCodeLink} target="_blank" rel="noopener noreferrer">
+              <span aria-hidden="true">Source Code</span>
+              <span class="visually-hidden">
+                Source code of the {name} project. Opens in a new tab.
+              </span>
+            </a>
+          </div>
+        </article>
+      </li>
+    ))}
   </ul>
 </section>
 

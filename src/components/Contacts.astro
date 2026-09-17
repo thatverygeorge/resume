@@ -6,28 +6,26 @@ import contacts from '@/data/contacts.json';
   <h2 id="contacts-heading">Contacts</h2>
 
   <ul>
-    {
-      contacts.map(({ url, label, value, ariaLabel }) => {
-        if (url === '') {
-          return (
-            <li>
-              <span>{label}</span>
-              <span>{value}</span>
-            </li>
-          );
-        }
-
+    {contacts.map(({ url, label, value, ariaLabel }) => {
+      if (url === '') {
         return (
           <li>
-            <span aria-hidden="true">{label}</span>
-            <a href={url} target="_blank" rel="noopener noreferrer">
-              <span aria-hidden="true">{value}</span>
-              <span class="visually-hidden">{ariaLabel}</span>
-            </a>
+            <span>{label}: </span>
+            <span>{value}</span>
           </li>
         );
-      })
-    }
+      }
+
+      return (
+        <li>
+          <span aria-hidden="true">{label}: </span>
+          <a href={url} target="_blank" rel="noopener noreferrer">
+            <span aria-hidden="true">{value}</span>
+            <span class="visually-hidden">{ariaLabel}</span>
+          </a>
+        </li>
+      );
+    })}
   </ul>
 </section>
 

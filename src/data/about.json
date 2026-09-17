@@ -1,5 +1,8 @@
 {
   "name": "George Kirakosyan",
   "position": "Frontend Developer",
-  "description": "A Frontend Developer with 3+ years of experience working with HTML, CSS, JS, Vue, and React."
+  "description": [
+    "I am a Frontend Developer with nearly 4 years of experience building high-performance, scalable, and user-centric web applications. Over the course of my career, I have specialized in translating complex business logic into robust, clean, and maintainable code.",
+    "My core expertise lies in the Vue.js ecosystem (Vue 2/3, Nuxt), backed by a solid foundation in HTML, CSS, JavaScript, and TypeScript. I thrive in collaborative, cross-functional agile teams, where I actively contribute to project scoping, sprint planning, and maintaining high engineering standards."
+  ]
 }

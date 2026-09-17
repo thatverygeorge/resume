@@ -5,7 +5,9 @@ import skills from '@/data/skills.json';
 <section aria-labelledby="skills-heading">
   <h2 id="skills-heading">Skills</h2>
   <ul>
-    {skills.map((skill) => <li>{skill}</li>)}
+    {skills.map((skill) => (
+      <li>{skill}</li>
+    ))}
   </ul>
 </section>
 
@@ -15,10 +17,8 @@ import skills from '@/data/skills.json';
     grid-template-columns: repeat(3, 1fr);
     column-gap: 2rem;
     align-content: start;
-  }
 
-  @media (width <= 480px) {
-    ul {
+    @media (width <= 480px) {
       grid-template-columns: repeat(2, 1fr);
     }
   }

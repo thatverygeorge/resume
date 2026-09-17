@@ -3,16 +3,36 @@
     "company": "Maxbitsolution",
     "position": "Frontend Developer",
     "startDate": "2024-06",
-    "endDate": "",
-    "description": "Developing responsive components from scratch in a team of 10+ members.",
-    "techStack": ["HTML", "CSS (SCSS)", "JavaScript", "TypeScript", "Vue", "Vue Router", "Nuxt", "Pinia", "Jest"]
+    "endDate": "2026-09",
+    "description": [
+      "Developed and maintained the front-end architecture of iGaming web applications, collaborating effectively within a cross-functional team of 10+ members.",
+      "Engineered features and core business logic utilizing HTML, SCSS, JavaScript, TypeScript, Vue 2/3, Pinia, and Nuxt.",
+      "Refactored legacy code to enhance application performance, scalability, and maintainability.",
+      "Investigated and resolved critical bugs, improving platform stability and user experience.",
+      "Authored unit tests to maximize code coverage and prevent regressions.",
+      "Estimated project scopes and contributed to sprint and release planning sessions.",
+      "Conducted code reviews, ensuring adherence to industry best practices and high-quality coding standards."
+    ],
+    "techStack": [
+      "HTML",
+      "CSS (SCSS)",
+      "JavaScript",
+      "TypeScript",
+      "Vue",
+      "Vue Router",
+      "Nuxt",
+      "Pinia",
+      "Vitest"
+    ]
   },
   {
     "company": "SpurIT",
     "position": "Frontend Developer",
     "startDate": "2022-09",
     "endDate": "2023-09",
-    "description": "",
+    "description": [
+      "Developed and maintained the front-end architecture of e-commerce web applications, collaborating effectively within a cross-functional team of 5+ members."
+    ],
     "techStack": ["HTML", "CSS", "JavaScript", "Shopify", "Liquid"]
   },
   {
@@ -20,7 +40,9 @@
     "position": "Frontend Developer",
     "startDate": "2021-10",
     "endDate": "2022-03",
-    "description": "",
+    "description": [
+      "Developed and maintained the front-end architecture of e-commerce web applications, collaborating effectively within a cross-functional team of 5+ members."
+    ],
     "techStack": ["HTML", "CSS", "JavaScript", "React", "Oracle OSF"]
   }
 ]

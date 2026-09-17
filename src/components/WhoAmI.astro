@@ -2,7 +2,6 @@
 interface Props {
   name: string;
   position: string;
-  techStack: string[];
 }
 
 const { name, position } = Astro.props;
@@ -10,8 +9,28 @@ const { name, position } = Astro.props;
 
 <section aria-labelledby="resume-heading">
   <h1 id="resume-heading">
-    {name}
+    {name},
     <br />
     {position}
   </h1>
 </section>
+
+<style>
+  section {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+
+    @media (width <= 960px) {
+      justify-content: center;
+    }
+
+    @media print {
+      justify-content: flex-start;
+      grid-column: 1 / -1;
+    }
+  }
+</style>

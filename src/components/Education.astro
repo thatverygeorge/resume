@@ -1,32 +1,25 @@
 ---
 import education from '@/data/education.json';
-import { formatDate } from '@/scripts/utils';
+import { formatDate, formatDateForAriaLabel } from '@/scripts/utils';
 ---
 
 <section aria-labelledby="education-heading">
   <h2 id="education-heading">Education</h2>
   <ul>
-    {
-      education.map(({ academy, course, startDate, endDate }) => (
-        <li>
-          <article>
-            <h3>
-              {academy},
-              <br />
-              {course}
-            </h3>
-            <p>
-              <time datetime={startDate}>{formatDate(startDate)}</time>
-              <span> - </span>
-              {endDate ? (
-                <time datetime={endDate}>{formatDate(endDate)}</time>
-              ) : (
-                <span>present</span>
-              )}
-            </p>
-          </article>
-        </li>
-      ))
-    }
+    {education.map(({ academy, course, startDate, endDate }) => (
+      <li>
+        <article>
+          <h3>
+            {academy},
+            <br />
+            {course}
+          </h3>
+          <p class="dates">
+            <span class="visually-hidden">{formatDateForAriaLabel(startDate, endDate)}</span>
+            <span aria-hidden="true">{formatDate(startDate, endDate).toLowerCase()}</span>
+          </p>
+        </article>
+      </li>
+    ))}
   </ul>
 </section>
